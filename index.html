@@ -26,29 +26,29 @@
     <div class="min-h-screen flex flex-col">
       <!-- Header -->
       <header class="bg-white/90 backdrop-blur sticky top-0 z-20 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-center">
           <a href="#" class="flex items-center gap-3">
-            <!-- 로고: ./assets/chopchop_logo.png -->
+            <!-- 로고: ./assets/chopchop_logo_transparent.png (배경 투명 버전) -->
             <img
-              src="./assets/chopchop_logo.png"
+              src="./assets/chopchop_logo_transparent.png"
               alt="Chop Chop 로고"
-              width="120"
-              height="40"
-              class="h-8 w-auto object-contain"
+              width="160" 
+              height="48" 
+              class="h-12 w-auto object-contain"
               decoding="async"
             />
             <span class="sr-only">Chop Chop for Hosts 홈으로 이동</span>
           </a>
 
           <!-- 데스크탑 CTA -->
-          <div class="hidden sm:block">
+          <div class="hidden">
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLScRZELeVBBQ2Ibz8HX4xpuI-JsHUeqW6KQNJEmhrloLGK0Pyg/viewform?usp=header"
               class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-4 py-2 rounded-lg transition"
               aria-label="Chop Chop 도입 신청하기"
             >
               <span class="material-icons text-base">rocket_launch</span>
-              도입 신청
+              지금 도입 신청
             </a>
           </div>
         </div>
@@ -67,10 +67,11 @@
           />
           <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-6">
             <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight max-w-4xl">
-              게스트의 배달 음식 주문, 더 이상 번거로워하지 마세요.
+              게스트 배달 주문, 이제 대신하지 마세요
             </h1>
             <p class="text-white/95 text-base sm:text-lg md:text-xl max-w-2xl mt-4">
-              Chop Chop이 호스트님을 도와드립니다. 게스트에게 맛있는 현지 음식을 쉽게 주문할 수 있는 방법을 제공하고, 호스트님의 소중한 시간을 아끼세요.
+              Chop Chop은 게스트가 언어 장벽 없이 <b>스스로</b> 현지 음식을 주문하게 하고,
+              호스트님은 체크인·청소·응대 같은 본업에 집중하도록 도와줍니다.
             </p>
 
             <!-- 모바일 CTA (히어로 안) -->
@@ -79,8 +80,8 @@
               class="mt-8 inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-3 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-orange-300"
               aria-label="Chop Chop 도입 신청하기"
             >
-              <span class="material-icons text-base">how_to_reg</span>
-              Chop Chop 도입하기
+              <span class="material-icons text-base">rocket_launch</span>
+              1분 만에 문의하기
             </a>
           </div>
         </section>
@@ -89,37 +90,42 @@
         <section class="py-14 sm:py-16 px-4 sm:px-6 bg-white">
           <div class="max-w-6xl mx-auto">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-center text-gray-900 mb-10 sm:mb-12">
-              Chop Chop 도입으로 얻는 혜택
+              Chop Chop을 도입하면 이렇게 달라집니다
             </h2>
 
             <div class="grid gap-8 sm:gap-10 md:grid-cols-3">
+              <!-- Card 1 -->
               <div class="bg-white rounded-2xl shadow-sm p-6 text-center border border-gray-100">
                 <div class="flex justify-center items-center mb-4 text-orange-500">
                   <span class="material-icons text-5xl">timer_off</span>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">시간 절약</h3>
+                <h3 class="text-xl font-semibold mb-2">호스트 업무가 줄어듭니다</h3>
                 <p class="text-gray-600 leading-relaxed">
-                  더 이상 메뉴를 번역해주거나 대신 주문해줄 필요가 없습니다. 게스트는 다국어를 지원하는 저희 앱을 통해 직접 모든 것을 할 수 있습니다.
+                  메뉴 번역, 주문 대행, 배달 문의 대응… 더 이상 직접 하지 마세요.
+                  게스트가 앱에서 끝까지 셀프 주문합니다.
                 </p>
               </div>
 
+              <!-- Card 2 -->
               <div class="bg-white rounded-2xl shadow-sm p-6 text-center border border-gray-100">
                 <div class="flex justify-center items-center mb-4 text-orange-500">
                   <span class="material-icons text-5xl">mood</span>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">게스트 만족도 상승</h3>
+                <h3 class="text-xl font-semibold mb-2">후기와 평점이 좋아집니다</h3>
                 <p class="text-gray-600 leading-relaxed">
-                  숙박 경험을 향상시키는 가치 있는 서비스를 제공하세요. 게스트는 편리하게 한국 음식을 배달시켜 먹을 수 있다는 점에 감사할 것입니다.
+                  낯선 나라에서도 익숙한 방식으로 주문—게스트가 편해지면 만족도와 재방문 의사가 올라갑니다.
                 </p>
               </div>
 
+              <!-- Card 3 -->
               <div class="bg-white rounded-2xl shadow-sm p-6 text-center border border-gray-100">
                 <div class="flex justify-center items-center mb-4 text-orange-500">
                   <span class="material-icons text-5xl">celebration</span>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">원활한 경험</h3>
+                <h3 class="text-xl font-semibold mb-2">문제 없이 매끄럽습니다</h3>
                 <p class="text-gray-600 leading-relaxed">
-                  주문부터 배달까지 저희가 모든 것을 처리합니다. 호스트와 게스트 모두에게 번거로움 없는 해결책입니다.
+                  주문부터 배달까지 전 과정을 Chop Chop이 관리합니다.
+                  호스트와 게스트 모두에게 깔끔한 경험을 제공합니다.
                 </p>
               </div>
             </div>
@@ -130,18 +136,18 @@
         <section class="py-16 px-4 sm:px-6 bg-gray-50">
           <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-2xl sm:text-3xl font-extrabold mb-4">
-              호스트님의 일상을 더 편리하게 만들 준비가 되셨나요?
+              호스트님의 시간을 아껴 드릴까요?
             </h2>
             <p class="text-gray-600 text-base sm:text-lg mb-8">
-              짧은 구글 폼을 작성해주시면, 게스트에게 Chop Chop을 소개하는 데 필요한 모든 자료를 제공해 드립니다.
+              간단한 폼을 남겨주시면, 숙소에 바로 적용할 수 있는 가이드와 자료를 보내드립니다.
             </p>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLScRZELeVBBQ2Ibz8HX4xpuI-JsHUeqW6KQNJEmhrloLGK0Pyg/viewform?usp=header"
               class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition focus:outline-none focus:ring-2 focus:ring-orange-300"
               aria-label="Chop Chop 도입 신청하기"
             >
-              <span class="material-icons text-xl">assignment_turned_in</span>
-              Chop Chop 도입하기
+              <span class="material-icons text-xl">rocket_launch</span>
+              데모·도입 문의하기
             </a>
           </div>
         </section>
