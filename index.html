@@ -34,8 +34,8 @@
     <div class="min-h-screen flex flex-col">
       <!-- Header -->
       <header class="bg-white/90 backdrop-blur sticky top-0 z-30 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <a href="#" class="flex items-center gap-3 mx-auto md:mx-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <a href="#" class="mx-auto flex items-center justify-center gap-3">
             <img
               src="./assets/chopchop_logo.png"
               alt="Chop Chop 로고"
@@ -45,24 +45,13 @@
               decoding="async"
             />
             <span class="ml-2 whitespace-nowrap text-xl sm:text-2xl font-bold tracking-tight text-orange-600">
-              Chop Chop for Hosts
+              chop chop for hosts
             </span>
             <span class="sr-only">Chop Chop for Hosts 홈으로 이동</span>
           </a>
-
-          <!-- 데스크탑 CTA: 문구 통일 -->
-          <div class="hidden md:block">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScRZELeVBBQ2Ibz8HX4xpuI-JsHUeqW6KQNJEmhrloLGK0Pyg/viewform?usp=header"
-              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-4 py-2 rounded-lg transition"
-              aria-label="Chop Chop 도입 신청하기"
-            >
-              <span class="material-icons text-base">rocket_launch</span>
-              Chop Chop 도입 신청하기
-            </a>
-          </div>
         </div>
       </header>
+
 
       <main class="flex-1">
         <!-- Hero -->
@@ -142,97 +131,64 @@
           </div>
         </section>
 
-        <!-- App Preview (예시 화면) -->
+        <!-- App Preview (예시 화면) — 단순 이미지 카드로 변경 -->
         <section class="relative bg-white py-12 sm:py-16">
           <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-8 sm:mb-12">
-              <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">실제 앱처럼 보이는 예시 화면</h2>
-              <p class="text-gray-600 mt-3">게스트가 보는 흐름을 스마트폰 모형으로 확인해 보세요.</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">서비스 예시 화면</h2>
+              <p class="text-gray-600 mt-3">게스트가 주문하는 흐름을 이미지로 간결하게 확인해 보세요.</p>
             </div>
-
-            <div class="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-center">
-              <!-- Left -->
-              <div class="hidden md:block tilt-l">
-                <div class="relative mx-auto w-[260px] h-[540px] rounded-[2.2rem] bg-black shadow-2xl ring-1 ring-black/10">
-                  <div class="absolute inset-0 rounded-[2.2rem] bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900"></div>
-                  <div class="absolute inset-[10px] rounded-[1.9rem] bg-black">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-2xl"></div>
-                    <img
-                      src="./assets/web-restaurants.png"
-                      alt="레스토랑 리스트 화면"
-                      loading="lazy"
-                      class="absolute inset-[8px] w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-[1.5rem] bg-black"
-                    />
-                  </div>
+        
+            <!-- 메인 1장 + 서브 2장 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <!-- 메인: 홈 -->
+              <figure class="md:col-span-1 order-2 md:order-1">
+                <div class="w-full aspect-[9/19.5] rounded-[1.25rem] overflow-hidden shadow-lg">
+                  <img
+                    src="./assets/web-home.png"
+                    alt="홈 화면"
+                    class="w-full h-full object-cover"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
                 </div>
-              </div>
-
-              <!-- Center (main) -->
-              <div class="order-first md:order-none">
-                <div class="relative mx-auto w-[290px] h-[600px] rounded-[2.5rem] bg-black shadow-[0_40px_80px_rgba(0,0,0,0.35)] ring-1 ring-black/10">
-                  <div class="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900"></div>
-                  <div class="absolute inset-[12px] rounded-[2.1rem] bg-black">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl"></div>
-                    <img
-                      src="./assets/web-home.png"
-                      alt="홈 화면"
-                      fetchpriority="high"
-                      class="absolute inset-[10px] w-[calc(100%-20px)] h-[calc(100%-20px)] object-cover rounded-[1.7rem] bg-black"
-                    />
-                  </div>
-                  <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[75%] h-6 rounded-full bg-black/10 blur-xl"></div>
+                <figcaption class="sr-only">홈 화면</figcaption>
+              </figure>
+        
+              <!-- 가운데(데스크탑에서 크게 보이도록) -->
+              <figure class="md:col-span-1 order-1 md:order-2">
+                <div class="w-full aspect-[9/19.5] rounded-[1.25rem] overflow-hidden shadow-lg">
+                  <img
+                    src="./assets/web-restaurants.png"
+                    alt="레스토랑 리스트 화면"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
-
-              <!-- Right -->
-              <div class="hidden md:block tilt-r">
-                <div class="relative mx-auto w-[260px] h-[540px] rounded-[2.2rem] bg-black shadow-2xl ring-1 ring-black/10">
-                  <div class="absolute inset-0 rounded-[2.2rem] bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900"></div>
-                  <div class="absolute inset-[10px] rounded-[1.9rem] bg-black">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-2xl"></div>
-                    <img
-                      src="./assets/web-menu.png"
-                      alt="메뉴/장바구니 화면"
-                      loading="lazy"
-                      class="absolute inset-[8px] w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-[1.5rem] bg-black"
-                    />
-                  </div>
+                <figcaption class="sr-only">레스토랑 리스트 화면</figcaption>
+              </figure>
+        
+              <!-- 메뉴/장바구니 -->
+              <figure class="md:col-span-1 order-3">
+                <div class="w-full aspect-[9/19.5] rounded-[1.25rem] overflow-hidden shadow-lg">
+                  <img
+                    src="./assets/web-menu.png"
+                    alt="메뉴/장바구니 화면"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
+                <figcaption class="sr-only">메뉴/장바구니 화면</figcaption>
+              </figure>
             </div>
-
-            <!-- 모바일에서 추가로 2장 노출(선택) -->
-            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
-              <div class="mx-auto w-[260px] h-[540px] rounded-[2.2rem] bg-black shadow-xl ring-1 ring-black/10">
-                <div class="relative inset-0 rounded-[2.2rem]">
-                  <div class="absolute inset-[10px] rounded-[1.9rem] bg-black">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-2xl"></div>
-                    <img
-                      src="./assets/web-restaurants.png"
-                      alt="레스토랑 리스트 화면"
-                      loading="lazy"
-                      class="absolute inset-[8px] w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-[1.5rem]"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="mx-auto w-[260px] h-[540px] rounded-[2.2rem] bg-black shadow-xl ring-1 ring-black/10">
-                <div class="relative inset-0 rounded-[2.2rem]">
-                  <div class="absolute inset-[10px] rounded-[1.9rem] bg-black">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-2xl"></div>
-                    <img
-                      src="./assets/web-menu.png"
-                      alt="메뉴/장바구니 화면"
-                      loading="lazy"
-                      class="absolute inset-[8px] w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-[1.5rem]"
-                    />
-                  </div>
-                </div>
-              </div>
+        
+            <!-- 모바일에서는 스와이프 느낌 간격 확보 -->
+            <div class="mt-4 md:hidden text-center text-xs text-gray-400">
+              이미지는 예시이며 실제 화면과 다를 수 있습니다.
             </div>
           </div>
         </section>
+
 
         <!-- CTA -->
         <section class="py-16 px-4 sm:px-6 bg-gray-50">
