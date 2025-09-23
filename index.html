@@ -19,6 +19,14 @@
         min-height: max(884px, 100dvh);
       }
       html { -webkit-overflow-scrolling: touch; }
+
+      /* 스마트폰 모형에 살짝의 3D 느낌 */
+      .tilt-l { transform: rotate(-4deg) translateY(6px); }
+      .tilt-r { transform: rotate(4deg) translateY(6px); }
+      @media (min-width: 768px) {
+        .tilt-l { transform: rotate(-6deg) translateY(10px); }
+        .tilt-r { transform: rotate(6deg) translateY(10px); } /* 오타 수정 */
+      }
     </style>
   </head>
 
@@ -26,8 +34,8 @@
     <div class="min-h-screen flex flex-col">
       <!-- Header -->
       <header class="bg-white/90 backdrop-blur sticky top-0 z-30 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-center">
-          <a href="#" class="flex items-center gap-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <a href="#" class="flex items-center gap-3 mx-auto md:mx-0">
             <img
               src="./assets/chopchop_logo.png"
               alt="Chop Chop 로고"
@@ -36,19 +44,21 @@
               class="h-14 w-auto object-contain"
               decoding="async"
             />
-            <span class="ml-2 whitespace-nowrap text-xl sm:text-2xl font-bold tracking-tight text-orange-600">ChopChop for Hosts</span>
+            <span class="ml-2 whitespace-nowrap text-xl sm:text-2xl font-bold tracking-tight text-orange-600">
+              Chop Chop for Hosts
+            </span>
             <span class="sr-only">Chop Chop for Hosts 홈으로 이동</span>
           </a>
 
-          <!-- 데스크탑 CTA -->
-          <div class="hidden">
+          <!-- 데스크탑 CTA: 문구 통일 -->
+          <div class="hidden md:block">
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLScRZELeVBBQ2Ibz8HX4xpuI-JsHUeqW6KQNJEmhrloLGK0Pyg/viewform?usp=header"
               class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-4 py-2 rounded-lg transition"
-              aria-label="ChopChop 도입 신청하기"
+              aria-label="Chop Chop 도입 신청하기"
             >
               <span class="material-icons text-base">rocket_launch</span>
-              ChopChop 도입 신청하기
+              Chop Chop 도입 신청하기
             </a>
           </div>
         </div>
@@ -57,7 +67,6 @@
       <main class="flex-1">
         <!-- Hero -->
         <section class="relative w-full h-[60vh] min-h-[420px] md:h-[70vh] overflow-hidden">
-          <!-- 메인 이미지: ./assets/main_image.png -->
           <img
             src="./assets/main_image.png"
             alt="맛있는 한국 음식 배달"
@@ -70,18 +79,18 @@
               게스트 배달 주문, 이제 대신해주지 마세요
             </h1>
             <p class="text-white/95 text-base sm:text-lg md:text-xl max-w-2xl mt-4">
-              ChopChop은 게스트가 스스로 주문하게 하고,
+              Chop Chop은 게스트가 스스로 주문하게 하고,
               호스트님은 숙소 운영에만 집중하여 모두의 만족도를 높여줍니다.
             </p>
 
-            <!-- 모바일 CTA (히어로 안) -->
+            <!-- 모바일/데스크탑 공통 CTA: 문구 통일 -->
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLScRZELeVBBQ2Ibz8HX4xpuI-JsHUeqW6KQNJEmhrloLGK0Pyg/viewform?usp=header"
               class="mt-8 inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-3 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-orange-300"
-              aria-label="ChopChop 도입 신청하기"
+              aria-label="Chop Chop 도입 신청하기"
             >
               <span class="material-icons text-base">rocket_launch</span>
-              ChopChop 도입하기
+              Chop Chop 도입 신청하기
             </a>
           </div>
         </section>
@@ -125,9 +134,101 @@
                 </div>
                 <h3 class="text-xl font-semibold mb-2">문제 없이 매끄럽습니다</h3>
                 <p class="text-gray-600 leading-relaxed">
-                  주문부터 배달까지 전 과정을 ChopChop이 관리합니다.
+                  주문부터 배달까지 전 과정을 Chop Chop이 관리합니다.
                   호스트와 게스트 모두에게 깔끔한 경험을 제공합니다.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- App Preview (예시 화면) -->
+        <section class="relative bg-white py-12 sm:py-16">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12">
+              <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">실제 앱처럼 보이는 예시 화면</h2>
+              <p class="text-gray-600 mt-3">게스트가 보는 흐름을 스마트폰 모형으로 확인해 보세요.</p>
+            </div>
+
+            <div class="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-center">
+              <!-- Left -->
+              <div class="hidden md:block tilt-l">
+                <div class="relative mx-auto w-[260px] h-[540px] rounded-[2.2rem] bg-black shadow-2xl ring-1 ring-black/10">
+                  <div class="absolute inset-0 rounded-[2.2rem] bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900"></div>
+                  <div class="absolute inset-[10px] rounded-[1.9rem] bg-black">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-2xl"></div>
+                    <img
+                      src="./assets/web-restaurants.png"
+                      alt="레스토랑 리스트 화면"
+                      loading="lazy"
+                      class="absolute inset-[8px] w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-[1.5rem] bg-black"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Center (main) -->
+              <div class="order-first md:order-none">
+                <div class="relative mx-auto w-[290px] h-[600px] rounded-[2.5rem] bg-black shadow-[0_40px_80px_rgba(0,0,0,0.35)] ring-1 ring-black/10">
+                  <div class="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900"></div>
+                  <div class="absolute inset-[12px] rounded-[2.1rem] bg-black">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl"></div>
+                    <img
+                      src="./assets/web-home.png"
+                      alt="홈 화면"
+                      fetchpriority="high"
+                      class="absolute inset-[10px] w-[calc(100%-20px)] h-[calc(100%-20px)] object-cover rounded-[1.7rem] bg-black"
+                    />
+                  </div>
+                  <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[75%] h-6 rounded-full bg-black/10 blur-xl"></div>
+                </div>
+              </div>
+
+              <!-- Right -->
+              <div class="hidden md:block tilt-r">
+                <div class="relative mx-auto w-[260px] h-[540px] rounded-[2.2rem] bg-black shadow-2xl ring-1 ring-black/10">
+                  <div class="absolute inset-0 rounded-[2.2rem] bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900"></div>
+                  <div class="absolute inset-[10px] rounded-[1.9rem] bg-black">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-2xl"></div>
+                    <img
+                      src="./assets/web-menu.png"
+                      alt="메뉴/장바구니 화면"
+                      loading="lazy"
+                      class="absolute inset-[8px] w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-[1.5rem] bg-black"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 모바일에서 추가로 2장 노출(선택) -->
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
+              <div class="mx-auto w-[260px] h-[540px] rounded-[2.2rem] bg-black shadow-xl ring-1 ring-black/10">
+                <div class="relative inset-0 rounded-[2.2rem]">
+                  <div class="absolute inset-[10px] rounded-[1.9rem] bg-black">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-2xl"></div>
+                    <img
+                      src="./assets/web-restaurants.png"
+                      alt="레스토랑 리스트 화면"
+                      loading="lazy"
+                      class="absolute inset-[8px] w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-[1.5rem]"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mx-auto w-[260px] h-[540px] rounded-[2.2rem] bg-black shadow-xl ring-1 ring-black/10">
+                <div class="relative inset-0 rounded-[2.2rem]">
+                  <div class="absolute inset-[10px] rounded-[1.9rem] bg-black">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-b-2xl"></div>
+                    <img
+                      src="./assets/web-menu.png"
+                      alt="메뉴/장바구니 화면"
+                      loading="lazy"
+                      class="absolute inset-[8px] w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-[1.5rem]"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -140,7 +241,7 @@
               호스트님의 시간을 아껴 드릴까요?
             </h2>
             <p class="text-gray-600 text-base sm:text-lg mb-8">
-              간단한 구글폼을 남겨주시면, 숙소에 바로 적용할 수 있는 가이드와 자료를 보내드립니다.
+              간단한 구글폼을 남겨주시면, 곧 서비스가 출시될 때 가장 먼저 알려드리겠습니다!
             </p>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLScRZELeVBBQ2Ibz8HX4xpuI-JsHUeqW6KQNJEmhrloLGK0Pyg/viewform?usp=header"
@@ -148,7 +249,7 @@
               aria-label="Chop Chop 도입 신청하기"
             >
               <span class="material-icons text-xl">rocket_launch</span>
-              ChopChop 도입 신청하기
+              Chop Chop 도입 신청하기
             </a>
           </div>
         </section>
